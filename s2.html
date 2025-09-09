@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sudoku Game</title>
+    <link rel="stylesheet" href="sdko.css">
+    <style>
+      body {
+        background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+      }
+    </style>
+</head>
+<body>
+<!-- Sidebar -->
+<div class="sidebar">
+  <a id="sudoku" href="home.html">Home</a>
+  <a href="s2.html">Play Game</a>
+  <a href="s1.html">Learn Sudoku</a>
+  <a href="aboutus.html">About Us</a>
+</div>
+
+
+    <h1>Sudoku Game</h1>
+
+    <div id="controls">
+        <button onclick="generateSudoku()">🆕 New Game</button>
+        <button onclick="togglePause()">⏸ Pause</button>
+        <span id="timer">⏳ 00:00</span>
+        <span id="mistakes">❌ Mistakes: 0/3</span>
+    </div>
+
+    <div id="sudoku-board"></div>
+
+    <div id="number-pad"></div>
+
+    <p id="result"></p>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2>❌ Game Over!</h2>
+            <p>You reached 3 mistakes.</p>
+            <button onclick="closeModal('gameOverModal'); generateSudoku()">New Game</button>
+        </div>
+    </div>
+    <!-- win model-->
+    <div id="winModal" class="modal">
+        <div class="modal-content">
+            <h2>🏆 Congratulations!</h2>
+            <p>You solved the Sudoku!</p>
+            <button onclick="closeModal('winModal'); generateSudoku()">New Game</button>
+        </div>
+    </div>
+    
+    <!-- Pause Modal -->
+    <div id="pauseModal" class="modal">
+        <div class="modal-content">
+            <h2>⏸ Game Paused</h2>
+            <button onclick="togglePause()">Resume</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

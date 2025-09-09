@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>SUDOKU.LOVER.SOLVER</title>
+        <link rel="stylesheet" href="sdko.css">
+        <style>
+            ol ul {
+                list-style-type:disc;
+                list-style-position: inside;
+                text-align: center;
+                padding-left: 0;
+                color:grey;
+            }
+            body {
+            background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+            }
+        </style>
+    </head>
+    <body>
+        
+<!-- Sidebar -->
+<div class="sidebar">
+  <a id="sudoku" href="home.html">Home</a>
+  <a href="s2.html">Play Game</a>
+  <a href="s1.html">Learn Sudoku</a>
+  <a href="aboutus.html">About Us</a>
+</div>
+
+        
+        <h1>How to Play & Solve Sudoku</h1>
+        <p><br><strong>Key Points:</strong></p>
+        <ol>
+            <li>Sudoku must be solveable.</li>
+            <li style="font-weight:bold;"">Basic Sudoku structure:</li>
+            <u>
+                <li>Variables: 81 cells in a 9×9 grid.</li>
+                <li>Domain: {1, 2, 3, 4, 5, 6, 7, 8, 9}.</li>
+            </ul>
+            <li style="font-weight:bold;">Constraints/Rules:</li>
+            <ul>
+                <li>Each row must contain all digits 1–9 without repetition.</li>
+                <li>Each column must contain all digits 1–9 without repetition.</li>
+                <li>Each 3×3 subgrid must contain all digits 1–9 without repetition.</li>
+            </ul>
+            <li style="font-weight:bold;">How to use the solver?</li>
+            <ul>
+                <li>click on the cell and enter the numbers.</li>
+                <li>after entering all numbers click in solve button.</li>
+            </ul>
+        </ol>
+        <div id="controls">
+            <button onclick="takeSudoku()">🆕 New Grid</button>
+            <button onclick="nowsolveSudoku()">Solve</button>
+        </div>
+        <div id="sudoku-board"></div>
+        <script src="script1.js"></script>
+    </body>
+</html>

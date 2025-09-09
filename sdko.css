@@ -1,0 +1,230 @@
+ .sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #2c3e50;
+  padding-top: 20px;
+}
+.sidebar h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.sidebar a:hover {
+  background: #34495e;
+}
+#sudoku {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 44px);
+    grid-template-rows: repeat(9,44px);
+    gap: 0;
+    margin: 20px auto;
+    width: fit-content;
+    padding: 0;
+    justify-content: center;
+    border: 4px solid black;
+}
+#control {
+  margin: 10px 0 20px;
+}
+input{
+  text-align: center;
+  font-size: 18px;
+}
+.cell {
+    border: 1px solid black;
+    font-size: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+}
+.cell.thick-right {
+    border-right: 4px solid black !important;
+}
+
+.cell.thick-bottom {
+    border-bottom: 4px solid black !important;
+}
+.cell.red {
+    background-color: #ffcccc;
+}
+.cell.blue{
+    background-color: aqua;
+}
+#number-pad {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.number-btn {
+    padding: 10px;
+    background: #ddd;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+.number-btn:hover {
+    background: #ccc;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+.modal-content {
+    background: white;
+    padding: 20px;
+    margin: 20% auto;
+    width: 300px;
+    border-radius: 10px;
+} 
+
+
+
+
+/* === Existing styles (keep your current styles) ===
+   ... (do not remove your .sidebar, #sudoku-board, .cell, .cell.thick-right etc)
+   Below are additions / small overrides for the color + highlight features.
+*/
+
+/* number color classes */
+.num1 { color: #e74c3c; }   /* red */
+.num2 { color: #27ae60; }   /* green */
+.num3 { color: #2980b9; }   /* blue */
+.num4 { color: #8e44ad; }   /* purple */
+.num5 { color: #f39c12; }   /* amber/orange */
+.num6 { color: #16a085; }   /* teal */
+.num7 { color: #d35400; }   /* dark orange */
+.num8 { color: #2c3e50; }   /* dark slate */
+.num9 { color: #9b59b6; }   /* mauve */
+
+/* make digits a bit more visible */
+#sudoku-board .cell { 
+  font-weight: 600;
+  color: black; /* default; overridden by .numN */
+}
+
+/* highlight neighbors (row/col/box) on focus */
+.cell.highlight {
+  background-color: #fff8e1; /* soft yellow */
+}
+
+/* the selected cell (focused) stands out a bit more */
+.cell.selected {
+  background-color: #fff3b0;
+  box-shadow: inset 0 0 0 2px rgba(255,200,80,0.15);
+}
+
+/* solved cells background */
+.cell.solved {
+  background-color: rgba(173, 216, 230, 0.35); /* light aqua-ish */
+}
+
+/* keep 'red' (invalid) highest priority */
+.cell.red {
+  background-color: #ffcccc !important;
+}
+
+/* keep existing .thick-right/.thick-bottom borders working */
+.cell.thick-right { border-right: 4px solid black !important; }
+.cell.thick-bottom { border-bottom: 4px solid black !important; }
+
+/* small responsive tweak for smaller screens */
+@media (max-width: 420px) {
+  #sudoku-board { grid-template-columns: repeat(9, 36px); grid-template-rows: repeat(9, 36px); }
+  .cell { font-size: 22px; }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ddd;
+}   
+h1 {
+    color: #333;
+}
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+.about-container h2 {
+    color: #444;
+
+}
+.about-container p {
+    line-height: 1.6;
+    color: #555;
+
+}
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+    font-size: 14px;
+}
+
+.footer {
+  margin-left: 210px;         /* align with sidebar */
+  text-align: center;
+  padding: 15px;
+  background: #333;
+  color: #fff;
+  position: fixed;            /* sticks at bottom */
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+
+
+
+
+
+
+
